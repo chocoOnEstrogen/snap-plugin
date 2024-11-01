@@ -1,9 +1,11 @@
+const { hello } = require('./utils');
+
 const examplePlugin = {
-  name: 'example',
-  version: '1.0.0',
-  description: 'An example plugin for Snap-CLI',
-  
-  commands: [
+	name: 'example',
+	version: '1.0.0',
+	description: 'An example plugin for Snap-CLI',
+
+	commands: [
     {
       name: 'hello',
       description: 'Say hello from the example plugin',
@@ -15,10 +17,10 @@ const examplePlugin = {
           defaultValue: 'World'
         }
       ],
-      action: async (options) => {
-        console.log(`Hello, ${options.name}!`);
-      }
-    }
+			action: async (options) => {
+				hello(options);
+			},
+		},
   ]
 };
 
